@@ -50,6 +50,6 @@
 
    EEF 위치 옮기는 기본적인 코드는 "UR5.move_eef()"로, 위 코드에서 확인 가능.
 
-   > "Perform Test"에서 "shelf_env.do_episode()" 수행 시 업무 시작.
+   > "StarLab_Test.ipynb => Perform Test"에서 "shelf_env.do_episode()" 수행 시 업무 시작.
 
-   > "Perform Test"에서 "shelf_env.target_rotation_check(show_result=True)"로 하면 관측되는 point cloud를 확인할 수 있음.
+   > "StarLab_Test.ipynb => Perform Test"에서 "shelf_env.target_rotation_check(show_result=True)"로 하면 관측되는 point cloud를 확인할 수 있음.
