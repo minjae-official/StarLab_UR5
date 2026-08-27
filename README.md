@@ -4,11 +4,12 @@
 6차년도 실험: 5개의 물체 X 12 에피소드 = 60번의 pick 수행
 
 # Simulation
-> cd /home/ur-plusle/minjae/ShelfStarlab/robosuite/robosuite/ShelfPick
+> source ~/virtuals/shelf_env/bin/activate
 
-> python Shelf.py
+> cd /home/ur-minum/minjae/TSAD/robosuite/robosuite/ShelfPick
 
-성공률 조절이 필요하다면,
+> python ShelfStarlab.py
+
 
 물체들의 위치는 XY좌표로 저장됨 (./result/pose_o5_lv1.npz). ReadPosition.ipynb 파일에서 확인 가능.
 
@@ -17,16 +18,20 @@
    
    <img src = "https://github.com/mjkang16/StarLab_UR5/blob/main/images/img1_env.jpg" width="20%">  (실제 환경 사진)
    
-   - EEF 좌표 (0.10, -0.35, 0.12) & 쿼터니언 (0.7071, 0.0, 0.0, 0.7071) 에 위치한 모습.
+   - 기본 EEF 좌표 (-0.10, 0.35, 0.12) & 쿼터니언 (0.0, 0.7071, 0.7071, 0.0)
    
-   - joint 값: (-1.6119, -1.5469, 2.4116, -0.8663, 1.5465, 0.0108).
+   - 기본 joint 값: (-1.6034, -1.5460, 2.4102, -0.8654, -4.7335, 0.0106).
 
 
    <img src = "https://github.com/mjkang16/StarLab_UR5/blob/main/images/img2_shelf.jpg" width="20%">  (서랍 위치)
    
    서랍은 위 사진과 같이 놓기.
    
-   - EEF 좌표(0.36, -0.43, 0.12). 위치 에러 조금은 있어도 됨.
+   - 서랍 왼쪽 기준 EEF 좌표(-0.36, 0.43, 0.12).
+  
+   - 서랍 오른쪽 기준 EEF 좌표(-0.36, 0.43, 0.12).
+  
+   "StarLab_Test.ipynb"의 Shelf Positioning 참조
 
    <img src = "https://github.com/mjkang16/StarLab_UR5/blob/main/images/img3_object.jpg" width="20%">  (물체 위치)
 
@@ -38,11 +43,7 @@
 
 2. 코드 실행하기
    
-   실험 코드는 "/home/ur-plusle/minjae/GP3_StarLab/StarLab_Test.ipynb"에 정리해놓음.
-
-   로봇 연결은 바탕화면에 있는 ConnectionGuide 참조.
-
-   > Gripper 연결: roslaunch robotiq_2f_gripper_control robotiq_action_server.launch
+   실험 코드는 "/home/ur-minun/minjae/GP3_StarLab/StarLab_Test.ipynb"에 정리해놓음. 순서대로 실행해보기.
 
    "GP3_StarLab" 폴더는 UR5 로봇을 조작하기 위한 코드.
 
@@ -52,4 +53,4 @@
 
    > "StarLab_Test.ipynb => Perform Test"에서 "shelf_env.do_episode()" 수행 시 업무 시작.
 
-   > "StarLab_Test.ipynb => Perform Test"에서 "shelf_env.target_rotation_check(show_result=True)"로 하면 관측되는 point cloud를 확인할 수 있음.
+   > "StarLab_Test.ipynb => Perform Test"에서 "shelf_env.target_rotation_check(show_result=True)"로 하면 관측되는 point cloud를 확인할 수 있음. "Debug" 파트 확인.
